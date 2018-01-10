@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { CourseService } from './course/course-service.service';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent
+    CourseComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

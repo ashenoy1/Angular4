@@ -8,13 +8,13 @@ import{CourseService} from './course-service.service';
   //This template utilizes the ngFor, lists authors, and creates two buttons, that utilize class binding, style binding, and event Binding
 
   template: `
-            <h2>{{"Title:" + title}}</h2>
-            <h3> {{courses.length + " Authors"}} </h3>
+            <h2> {{courses.length + " Different Angular Features"}} </h2>
             <ul>
               <li *ngFor= "let course of courses">
                     {{course}}
               </li>
               <span [class] = "isStar? 'glyphicon glyphicon-star': 'glyphicon glyphicon-star-empty'" (click) = "starClick()"></span>
+              <favorite></favorite>
               <button [class.active] = "isActive" (click) = "onClick()" [style.backgroundColor] = "isActive ? 'blue':'white' "> Change Color </button>
               <input [(ngModel)] = "twoWayVar" (keyUp.enter) = "onKeyUp()"/>
             </ul>
@@ -42,8 +42,8 @@ export class CourseComponent{
   }
 
 
-  constructor(service: CourseService){  //This parameter means you're injecting Service(decouple!)
+  constructor(service: CourseService) {  //This parameter means you're injecting Service(decouple!)
     //let service = new CoursesService();  //Problem with this is you're tightly coupling this with the component class and testing would be hard
     this.courses = service.getCourses();
-
+  }
 }

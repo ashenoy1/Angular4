@@ -1,6 +1,9 @@
 export class CourseService{
 
   getCourses(){
-    return ["course1", "course2", "course3"];
+    return ["Resuable Components in one Star feature, Style Binding in the other Star (Check Console!)",
+            "Two Way Binding in the Input Field",
+            "Event Binding on the button"
+          ];
   }
 }
